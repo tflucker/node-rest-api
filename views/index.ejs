@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <h1 style="text-align: center;">Node REST API Landing page</h1>
+
+  <h2>Project Overview</h2>
+  <p>This project showcases REST API capabilities for a test model called 'Book'. All functionality is located at REST
+    API endpoints. A description of these endpoints and their expected inputs
+    can be found below.</p>
+  <hr>
+
+  <h2>API Documentation</h2>
+
+  <h3 style="text-decoration: underline;">Find All</h3>
+  <p><b>Description: </b>The endpoint lists all records of the 'Books' collection. The response is represented as a list
+    of JSON objects.
+  </p>
+  <p><b>Example URL: </b>http://localhost:3000/api/books/findAll</p>
+
+  <p><b>Sample Output:</b><br>
+    <pre>
+        [
+        {
+            "_id": "5dd2d0950520905f9b0ad531",
+            "name": "Dune",
+            "author": "Frank Herbert",
+            "genre": "Sci-Fi"
+        },
+        {
+            "_id": "5dd2ea7249bfc501149868ed",
+            "name": "The Name of the Wind",
+            "author": "Patrick Rothfuss",
+            "genre": "Fantasy"
+        },
+        {
+            "_id": "5dd2ef8f3ea25d3b94848ee0",
+            "name": "Brave New World",
+            "author": "Aldous Huxley",
+            "genre": "Fiction",
+            "__v": 0
+        },
+        {
+            "_id": "5dd2f111ec2c6c35f449d571",
+            "name": "Catcher in the Rye",
+            "author": "JD Salinger",
+            "genre": "Fiction",
+            "__v": 0
+        },
+        {
+            "_id": "5dd2f9e9f1e17e48cccc7c60",
+            "name": "Catcher in the Rye",
+            "author": "JD Salinger",
+            "genre": "Fiction",
+            "__v": 0
+        }
+    ]
+    </pre>
+  </p>
+  <br>
+
+  <h3 style="text-decoration: underline;">Find By ID</h3>
+  <p>This endpoint returns a single record in the 'Books' collection based on the provided id. The response is a JSON
+    representation of the object.</p>
+
+  <p><b>Example URL: </b>http://localhost:3000/api/books/findById/5dd2d0950520905f9b0ad531</p>
+
+  <p><b>Sample Output:</b>
+    <pre>
+      {
+        "_id": "5dd2d0950520905f9b0ad531",
+        "name": "Dune",
+        "author": "Frank Herbert",
+        "genre": "Sci-Fi",
+        "__v": 0
+      }
+
+    </pre>
+  </p>
+  <br>
+
+  <h3 style="text-decoration: underline;">Create</h3>
+  <p><b>Description: </b>Creates a new record in the 'Books' collection. Uses the provided JSON body to create the new
+    record.</p>
+  <p><b>Example URL: </b>http://localhost:3000/api/books/create</p>
+  <p><b>Sample Input: </b>
+    <pre>
+        {
+          "name":"Catcher in the Rye",
+          "author":"JD Salinger",
+          "genre":"Fiction"
+        }</pre>
+  </p>
+  <p><b>Sample Output:</b>
+
+    <pre>
+        {
+          "_id": "5dd2f9e9f1e17e48cccc7c60",
+          "name": "Catcher in the Rye",
+          "author": "JD Salinger",
+          "genre": "Fiction",
+          "__v": 0
+        }
+    </pre>
+
+  </p>
+
+  <br>
+  <h3 style="text-decoration: underline;">Update</h3>
+  <p><b>Description: </b>Updates a record in the 'Books' collection, based on the ID provided. Uses the JSON body to
+    update the record.</p>
+  <p><b>Example URL: </b>http://localhost:3000/api/books/update/5dd2f0e331a22934f011869e</p>
+  <p><b>Sample Input: </b>
+    <pre>
+        {
+          "name":"Lord of the Flies",
+          "author":"William Golding",
+          "genre":"Fiction"
+        }</pre>
+  </p>
+  <p><b>Sample Output:</b>
+    <pre>
+      {
+        "_id": "5dd2fd2df1e17e48cccc7c62",
+        "name": "Lord of the Flies",
+        "author": "William Golding",
+        "genre": "Fiction",
+        "__v": 0
+      }
+    </pre>
+  </p>
+
+  <br>
+  <h3 style="text-decoration: underline;">Delete</h3>
+  <p><b>Description: </b>Delets a record in the 'Books' collection based on the ID provided.</p>
+  <p><b>Example URL: </b>http://localhost:3000/api/books/delete/5dd2f0e331a22934f011869e</p>
+  <p><b>Sample Output:</b>
+    <pre>Successfully deleted record with id: 5dd2f0e331a22934f011869e</pre>
+  </p>
+
+  <script src="" async defer></script>
+</body>
+
+</html>
